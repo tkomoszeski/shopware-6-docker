@@ -2,6 +2,10 @@
 shopware-6-docker
 
 ## Setup shopware container
+
+Before you run this command read please:
+[Performance tweaks](https://dockware.io/docs#performance-tweaks)
+
 ```code
 docker-compose up -d
 ```
