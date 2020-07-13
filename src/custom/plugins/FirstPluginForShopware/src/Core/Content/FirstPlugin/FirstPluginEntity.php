@@ -5,13 +5,14 @@ namespace FirstPluginForShopware\Core\Content\FirstPlugin;
 
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
+use Shopware\Core\System\Country\CountryEntity;
 
 class FirstPluginEntity extends Entity
 {
     use EntityIdTrait;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $technicalName;
 
@@ -24,4 +25,30 @@ class FirstPluginEntity extends Entity
     {
         $this->technicalName = $technicalName;
     }
+
+    /**
+     * @var CountryEntity|null
+     */
+    protected $country;
+
+    /**
+     * @return CountryEntity|null
+     */
+    public function getCountry(): ?CountryEntity
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param CountryEntity|null $country
+     */
+    public function setCountry(?CountryEntity $country): void
+    {
+        $this->country = $country;
+    }
+
+
+
+
+
 }

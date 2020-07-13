@@ -3,6 +3,7 @@
 namespace FirstPluginForShopware;
 
 use Shopware\Core\Framework\Plugin;
+use Shopware\Core\Framework\Plugin\Context\InstallContext;
 
 class FirstPluginForShopware extends Plugin
 {
