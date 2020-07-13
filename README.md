@@ -42,3 +42,6 @@ Port: 22
 Host: localhost
 Port: 1025
 ```
+
+## Best practices and etc, for shopware plugins
+[Read me](https://symfony.com/doc/current/bundles/best_practices.html#composer-metadata)
