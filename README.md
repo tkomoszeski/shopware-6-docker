@@ -1,6 +1,10 @@
 # shopware-6-docker
 shopware-6-docker
 
+## Login to shopware docker container:
+```code
+docker exec -it shopware /bin/bash
+```
 
 ## Shopware Admin
 
