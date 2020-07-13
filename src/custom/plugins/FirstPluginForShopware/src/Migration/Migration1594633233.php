@@ -21,16 +21,14 @@ class Migration1594633233 extends MigrationStep
     {
         // implement update
         $connection->exec("
-            CREATE TABLE IF NOT EXISTS `first_plugin` 
+            CREATE TABLE IF NOT EXISTS first_plugin 
                 (
-                    `id`                BINARY(16) NOT NULL,
-                    `technical_name`    VARCHAR(255) NULL,
-                    `country_id`        BINARY(16) NULL,
-                    PRIMARY KEY (`id`),
-                    CONSTRAINT `id`
-                    KEY (`fk.first_plugin.country_id`) (`country_id`),
-                    CONSTRAINT `fk.first_plugin.country_id` FOREIGN KEY (`country_id`)
-                    REFERENCES `shopware`.`country` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE 
+                    id                BINARY(16) NOT NULL,
+                    technical_name    VARCHAR(255) NULL,
+                    country_id        BINARY(16) NULL,
+                    PRIMARY KEY (id),
+                    CONSTRAINT country_id FOREIGN KEY (country_id)
+                    REFERENCES country (id) ON DELETE RESTRICT ON UPDATE CASCADE 
                 ) 
             ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
         );
