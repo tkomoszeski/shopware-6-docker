@@ -8,5 +8,14 @@
         <service id="FirstPluginForShopware\Core\Content\FirstPlugin\FirstPluginDefinition">
             <tag name="shopware.entity.definition" entity="first_plugin" />
         </service>
+
+        <service id="FirstPluginForShopware\Core\Api\DemoDataController" public="true">
+            <argument id="country.repository" type="service" />
+            <argument id="first_plugin.repository" type="service" />
+
+            <call method="setContainer">
+                    <argument type="service" id="service_container" />
+            </call>
+        </service>
     </services>
 </container>
