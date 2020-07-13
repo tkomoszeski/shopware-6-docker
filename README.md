@@ -6,6 +6,11 @@ shopware-6-docker
 docker-compose up -d
 ```
 
+## Remove shopware container
+```code
+docker-compose rm
+```
+
 ## Login to shopware docker container:
 ```code
 docker exec -it shopware /bin/bash
