@@ -19,13 +19,20 @@ class Migration1594633233 extends MigrationStep
      */
     public function update(Connection $connection): void
     {
-        // implement update
+        /**
+         * implement update
+         * remember to add created_at , and updated_at columns
+         * iti is required for using shopware dal abstractions, repositories, create, update
+         * method
+        */
         $connection->exec("
             CREATE TABLE IF NOT EXISTS first_plugin 
                 (
                     id                BINARY(16) NOT NULL,
                     technical_name    VARCHAR(255) NULL,
-                    country_id        BINARY(16) NULL,
+                    country_id        BINARY(16) NULL,  
+                    created_at       DATETIME(3), 
+                    updated_at        DATETIME(3),
                     PRIMARY KEY (id),
                     CONSTRAINT country_id FOREIGN KEY (country_id)
                     REFERENCES country (id) ON DELETE RESTRICT ON UPDATE CASCADE 
