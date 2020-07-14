@@ -9,6 +9,7 @@
 namespace FirstPluginForShopware\Storefront\Subscriber;
 
 use FirstPluginForShopware\Core\Content\FirstPlugin\FirstPluginCollection;
+use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
@@ -48,7 +49,7 @@ class FooterSubscriber implements EventSubscriberInterface {
     }
 
     public function onFooterPageletLoaded(FooterPageletLoadedEvent $event): void {
-        if(!$this->systemConfigService->get("FirsPluginForShopware.config.showInStorefront")) {
+        if(!$this->systemConfigService->get("FirstPluginForShopware.config.showInStoreFront")) {
             return;
         }
 
@@ -57,17 +58,19 @@ class FooterSubscriber implements EventSubscriberInterface {
         $event->getPagelet()->addExtension("first_plugin",$shops);
     }
 
-    private function fetchShops(\Shopware\Core\Framework\Context $context) : FirstPluginCollection
+    private function fetchShops(Context $context) : FirstPluginCollection
     {
         $criteria = new Criteria();
         $criteria->addAssociation('country');
-        $criteria->addFilter(new EqualsFilter('active','1'));
+        $criteria->addFilter(new EqualsFilter('country.active','1'));
         $criteria->setLimit(5);
 
         /**
          * @var FirstPluginCollection $firstPluginCollection
          */
         $firstPluginCollection = $this->firstPluginRepository->search($criteria,$context)->getEntities();
+
+
 
         return $firstPluginCollection;
     }
