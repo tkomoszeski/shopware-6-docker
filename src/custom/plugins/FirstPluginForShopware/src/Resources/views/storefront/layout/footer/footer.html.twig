@@ -1,6 +1,7 @@
 {%  sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
 
 {% block layout_footer_navigation_columns %}
+    <h1> {{ 'first_plugin_for_shopware.footerTitle'|trans  }}</h1>
     {% if page.footer.extensions.first_plugin %}
         {% sw_include '@Storefront/storefront/layout/footer/first-plugin-footer.html.twig' with {
             'first_plugin': page.footer.extensions.first_plugin
