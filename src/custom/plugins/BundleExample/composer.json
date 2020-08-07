@@ -1,0 +1,30 @@
+{
+    "name": "swag/bundle-example",
+    "description": "Bundle example",
+    "version": "v1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shopware AG"
+        }
+    ],
+    "require": {
+        "shopware/core": "*",
+        "shopware/administration": "*",
+        "shopware/storefront": "*"
+    },
+    "type": "shopware-platform-plugin",
+    "autoload": {
+        "psr-4": {
+            "Swag\\BundleExample\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Swag\\BundleExample\\BundleExample",
+        "copyright": "(c) by shopware AG",
+        "label": {
+            "de-DE": "Beispiel für Shopware",
+            "en-GB": "Example for Shopware"
+        }
+    }
+}
