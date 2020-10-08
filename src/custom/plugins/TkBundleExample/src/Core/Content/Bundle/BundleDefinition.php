@@ -18,11 +18,9 @@ use TkBundleExample\Core\Content\Bundle\Aggregate\BundleTranslation\BundleTransl
 
 class BundleDefinition extends EntityDefinition {
 
-    public const ENTITY_NAME= 'tk_bundle';
-
     public function getEntityName(): string
     {
-        return self::ENTITY_NAME;
+        return 'tk_bundle';
     }
 
     public function getEntityClass(): string

@@ -22,9 +22,10 @@ use UsingRefs\Product;
  */
 class BundleProductDefinition extends MappingEntityDefinition {
 
+
     public function getEntityName(): string
     {
-        return 'tk_bundle_product';
+        return "tk_bundle_product";
     }
 
 

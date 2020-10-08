@@ -10,7 +10,6 @@ use TkBundleExample\Core\Content\Bundle\BundleDefinition;
 
 class BundleTranslationDefinition extends EntityTranslationDefinition {
 
-
     public function getEntityName(): string
     {
         return "tk_bundle_translation";
