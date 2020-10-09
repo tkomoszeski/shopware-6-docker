@@ -1,5 +1,10 @@
 #How to do migrations
 
+Before running migration you should use
+php bin/console plugin:refresh 
+
+to fetch data.  
+
 ## 1. Creating migration based on plugin
 php bin/console database:create-migration --name Bundle -p TheCorrectPluginName
 
