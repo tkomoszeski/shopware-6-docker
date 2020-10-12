@@ -20,8 +20,11 @@
 *   component: 'dummy',
 *   path: 'index'
 * },
+*
+* //Tutorial v2 Add the index/listing route inside navigation and add listing route as well in routing
 * */
 
+import './page/tk-bundle-list';
 import deDE from  './snippet/de-DE';
 import enGB from  './snippet/en-GB';
 
@@ -41,10 +44,16 @@ Module.register('tk-bundle', {
         'en-GB': enGB
     },
 
+    // add the index/listing route
     routes: {
-      a: {component: 'b'}
+        index: {
+            component: 'tk-bundle-list',
+            path: 'index'
+        }
     },
 
+
+    //add here navigation listing component
     navigation: [{
         label: 'tk-bundle.general.mainMenuItemGeneral',
         color: '#FFD435',
