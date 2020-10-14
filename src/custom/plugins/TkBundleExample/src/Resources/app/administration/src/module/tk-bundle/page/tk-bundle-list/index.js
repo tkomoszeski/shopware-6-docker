@@ -71,7 +71,13 @@ Component.register('tk-bundle-list',{
                    label: this.$tc('tk-bundle.list.columnDiscount'),
                    inlineEdit: 'number',
                    allowResize: true
-                }, //TODO https://academy.shopware.com/courses/take/shopware-6-developer-training-advanced-en/lessons/13562491-creating-a-custom-listing-in-the-administration
+                },
+               {
+                   property: 'discountType',
+                   label: this.$tc('tk-bundle.list.columnDiscountType'),
+                   allowResize: true
+               }
+
            ];
         }
     }

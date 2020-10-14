@@ -3,6 +3,12 @@
     "general": {
       "mainMenuItemGeneral": "Bundles",
       "description)TextModule": "Manage bundles here"
+    },
+    "list" : {
+      "addButtonText": "Add bundle",
+      "columnName": "Name",
+      "columnDiscountType": "Discount type",
+      "columnDiscount": "Discount"
     }
   }
 }
