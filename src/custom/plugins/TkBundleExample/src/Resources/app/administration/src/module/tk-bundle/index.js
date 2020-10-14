@@ -1,6 +1,6 @@
 //import snippet files as deDE and enGB
 //get the module factory as a partial allocation from the globally availalbe Shopware Object
-
+//import detail and create component
 //Register a new module with the name tk-bundle *(your bundle module)
 
 //File the following fields of the Module Properites
@@ -25,6 +25,9 @@
 * */
 
 import './page/tk-bundle-list';
+import './page/tk-bundle-create';
+import './page/tk-bundle-detail';
+
 import deDE from  './snippet/de-DE';
 import enGB from  './snippet/en-GB';
 
@@ -32,7 +35,7 @@ const { Module } = Shopware;
 
 Module.register('tk-bundle', {
     type: 'plugin',
-    name: 'bundle',
+    name: 'Bundle',
     title: 'tk-bundle.general.mainMenuItemGeneral',
     description: 'tk-bundle.general.descriptionTextModule',
     color: '#ffd435',
@@ -46,10 +49,26 @@ Module.register('tk-bundle', {
 
     // add the index/listing route
     routes: {
-        index: {
+        list: {
             component: 'tk-bundle-list',
-            path: 'index'
+            path: 'list'
+        },
+        //add route for detail view & create view and don't forget the meta.parentPath object
+        detail: {
+            component: 'tk-bundle-detail',
+            path: 'detail/:id',
+            meta: {
+                parentPath: 'tk.bundle.list'
+            }
+        },
+        create: {
+            component: 'tk-bundle-create',
+            path: 'create',
+            meta: {
+                parentPath: 'tk.bundle.list'
+            }
         }
+
     },
 
 
@@ -57,7 +76,7 @@ Module.register('tk-bundle', {
     navigation: [{
         label: 'tk-bundle.general.mainMenuItemGeneral',
         color: '#FFD435',
-        path: 'tk.bundle.index',
+        path: 'tk.bundle.list',
         icon: 'default-shopping-paper-bag',
         position: 100
     }]

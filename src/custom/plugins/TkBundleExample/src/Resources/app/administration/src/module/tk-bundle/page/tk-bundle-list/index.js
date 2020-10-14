@@ -1,4 +1,5 @@
 /**
+ * TODO
  * 1. Do a named import template from the tk-bundle-list.html.twig (your template.twig ) this points to our twig file
  * 2. Get the Component object be destructuring the global Shopware Object - we need component object to register the component
  * 3. Get the Critera object by destructuring the global Shopware.Data Object
@@ -33,12 +34,12 @@ Component.register('tk-bundle-list',{
 
     metaInfo() {
        return {
-           title: this.$createTitle() //use default administration method createTitle to fetch title
+           title: this.$createTitle() //TODO use default administration method createTitle to fetch title
        };
     },
 
-    computed: { //it's used for data can change
-        columns() { //we can change this name and use different one
+    computed: { //TODO it's used for data can change
+        columns() { //TODO we can change this name and use different one
             return this.getColumns();
         }
     },
@@ -60,7 +61,7 @@ Component.register('tk-bundle-list',{
            return [
                {
                    property: 'name',
-                   label: this.$tc('tk-bundle.list.columnName'),
+                   label: this.$t('tk-bundle.list.columnName'),
                    routerLink: 'tk.bundle.detail',
                    inlineEdit: 'string',
                    allowResize: true,
@@ -68,13 +69,13 @@ Component.register('tk-bundle-list',{
                 },
                 {
                    property: 'discount',
-                   label: this.$tc('tk-bundle.list.columnDiscount'),
+                   label: this.$t('tk-bundle.list.columnDiscount'),
                    inlineEdit: 'number',
                    allowResize: true
                 },
                {
                    property: 'discountType',
-                   label: this.$tc('tk-bundle.list.columnDiscountType'),
+                   label: this.$t('tk-bundle.list.columnDiscountType'),
                    allowResize: true
                }
 

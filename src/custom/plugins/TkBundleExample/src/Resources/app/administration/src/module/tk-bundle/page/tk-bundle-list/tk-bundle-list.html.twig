@@ -4,40 +4,65 @@
  3. Inside the page use a slotted template to add sw-entity-listing to the content
  #}
 
+{#{% block tk_bundle_list %}#}
+{#    <sw-page class="tk-bundle-list" >#}
+{#  This is twig, but what are slots, slots are something from vue js ,  there are mulitple slot syntax#}
+{#      here is example with  hasztag and slot name#}
+
+{#      more info about it can be found here:#}
+{#      https://vuejs.org/v2/guide/components-slots.html#}
+
+{#      We are using slots when we are using existing already shopware#}
+{#      component and configure it to our needs#}
+
+
+{#      And blocks are used for overriding#}
+{#      #}
+{#    {%  block tk_bundle_smart_bar_actions  %}#}
+{#        <template slot="smart-bar-actions">#}
+{#            <sw-button variant="primary" :routerLink="{ name: 'tk.bundle.create' } ">#}
+{#                {{ $t('tk-bundle.list.addButtonText') }}#}
+{#            </sw-button>#}
+{#        </template>#}
+{#    {% endblock %}#}
+
+{#        <template slot="content">#}
+{#            {% block tk_bundle_list_content  %}#}
+{#                <sw-entity-listing#}
+{#                    v-if="bundles"#}
+{#                    :items="bundles"#}
+{#                    :repository="repository"#}
+{#                    :showSelection="false"#}
+{#                    :columns="columns"#}
+{#                    :detailRoute="tk.bundle.detail"#}
+{#                >#}
+{#                </sw-entity-listing>#}
+{#            {% endblock %}#}
+{#        </template>#}
+{#    </sw-page>#}
+{#{% endblock %}#}
+
 {% block tk_bundle_list %}
-    <sw-page class="tk-bundle-list" >
-{#  This is twig, but what are slots, slots are something from vue js ,  there are mulitple slot syntax
-      here is example with  hasztag and slot name
-
-      more info about it can be found here:
-      https://vuejs.org/v2/guide/components-slots.html
-
-      We are using slots when we are using existing already shopware
-      component and configure it to our needs
-
-
-      And blocks are used for overriding
-      #}
-    {%  block tk_bundle_smart_bar_actions  %}
-        <template slot="smart-bar-actions">
-            <sw-button variant="primary" :routerLink="{ name: 'tk.bundle.create' } ">
-                {{ $tc('tk-bundle.list.addButtonText') }}
-            </sw-button>
-        </template>
+<sw-page class="tk-bundle-list">
+    {% block tk_bundle_list_smart_bar_actions %}
+    <template slot="smart-bar-actions">
+        <sw-button variant="primary" :routerLink="{ name: 'tk.bundle.create' }">
+            {{ $t('tk-bundle.list.addButtonText') }}
+        </sw-button>
+    </template>
     {% endblock %}
 
-        <template slot="content">
-            {% block tk_bundle_list_content  %}
-                <sw-entity-listing
-                    v-if="bundles"
-                    :items="bundles"
-                    :repository="repository"
-                    :showSelection="false"
-                    :columns="columns"
-                    :detailRoute="tk.bundle.detail"
-                >
-                </sw-entity-listing>
-            {% endblock %}
-        </template>
-    </sw-page>
+    <template slot="content">
+        {% block tk_bundle_list_content %}
+        <sw-entity-listing
+                v-if="bundles"
+                :items="bundles"
+                :repository="repository"
+                :showSelection="false"
+                :columns="columns"
+                detailRoute="tk.bundle.detail">
+        </sw-entity-listing>
+        {% endblock %}
+    </template>
+</sw-page>
 {% endblock %}

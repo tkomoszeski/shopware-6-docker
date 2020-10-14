@@ -9,6 +9,17 @@
        "columnName": "Name",
        "columnDiscountType": "Rabatt-typ",
        "columnDiscount": "Rabatt"
+     },
+     "detail": {
+       "nameLabel": "Name",
+       "discountLabel": "Rabatt",
+       "discountTypeLabel": "Rabatt Typ",
+       "assignProductsLabel": "Produkte zuweisen",
+       "cancelButtonText": "Abbrechen",
+       "saveButtonText": "Speichern",
+       "errorTitle": "Fehler beim Speichern des Bundles",
+       "absoluteText": "Absolut",
+       "percentageText": "Prozentual"
      }
    }
 }

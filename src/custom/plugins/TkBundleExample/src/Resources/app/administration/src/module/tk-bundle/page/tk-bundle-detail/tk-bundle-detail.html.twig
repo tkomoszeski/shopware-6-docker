@@ -1,0 +1,42 @@
+{% block tk_bundle_detail %}
+    <sw-page class="tk-bundle-detail" >
+        <template slot="smart-bar-actions" >
+                {# TODO add sw button for cancel  and sw button process for save #}
+            <sw-button :routerLink="{ name: 'tk.bundle.index' }" >
+                {{ $t('tk-bundle.detail.cancelButtonText') }}
+            </sw-button>
+
+            <sw-button-process
+                :isLoading="isLoading"
+                :processSuccess="processSuccess"
+                variant="primary"
+                @process-finish="saveFinish"
+                @click="onClickSave"
+            >
+                {{ $t('tk-bundle.detail.saveButtonText') }}
+            </sw-button-process>
+        </template>
+
+        <template slot="content" >
+                {# TODO add on sw-card-view  with a sw-card containing sw-fields for name, discount , discount type  and sw-many-to-many-select to make your bundle editable #}
+            <sw-card-view>
+                <sw-card v-if="bundle" :isLoading="isLoading">
+                    <sw-field :label="$t('tk-bundle.detail.nameLabel')" v-model="bundle.name"></sw-field>
+                    <sw-field :label="$t('tk-bundle.detail.discountLabel')" v-model="bundle.discount" type="number"></sw-field>
+
+                    <sw-field type="radio"
+                              :label="$t('tk-bundle.detail.discountTypeLabel')"
+                              v-model="bundle.discountType"
+                              :options="options">
+                    </sw-field>
+
+                    <sw-entity-many-to-many-select
+                            :localMode="bundle.isNew()"
+                            :label="$t('tk-bundle.detail.assignProductsLabel')"
+                            v-model="bundle.products">
+                    </sw-entity-many-to-many-select>
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}
