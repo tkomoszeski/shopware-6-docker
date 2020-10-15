@@ -1,0 +1,9 @@
+{
+    "tk-bundle": {
+        "detail": {
+            "bundleBadge": "Bundle",
+            "tabText": "Bundle",
+            "buyButtonText": "Kaufe Bundle und spare %bundleDiscount%"
+        }
+    }
+}

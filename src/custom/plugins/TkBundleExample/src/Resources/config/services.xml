@@ -15,6 +15,18 @@
             <tag name="shopware.entity.definition"  entity="tk_bundle_product"/>
         </service>
 
+        <service id="TkBundleExample\Resources\snippet\en_GB\SnippetFile_en_GB">
+            <tag name="shopware.snippet.file" priority="100"/>
+        </service>
+
+        <service id="TkBundleExample\Resources\snippet\de_DE\SnippetFile_de_DE">
+            <tag name="shopware.snippet.file" priority="100"/>
+        </service>
+
+        <service id="TkBundleExample\Storefront\Page\Product\Subscriber\ProductPageCriteriaSubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
         <service id="TkBundleExample\Core\Content\Product\ProductExtension">
             <tag name="shopware.entity.extension" />
         </service>
