@@ -41,5 +41,9 @@
             <tag name="shopware.cart.processor" priority="6000" />
             <tag name="shopware.cart.collector" priority="6000" />
         </service>
+
+        <service id="TkBundleExample\Core\Checkout\Bundle\Cart\Rule\CartContainsBundleRule">
+            <tag name="shopware.rule.definition"/>
+        </service>
     </services>
 </container>

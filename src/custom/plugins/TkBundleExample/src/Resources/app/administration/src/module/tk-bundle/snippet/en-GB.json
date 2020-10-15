@@ -28,5 +28,12 @@
       "bundleSelectLabel": "Associated bundles",
       "bundleSelectPlaceholder": "Add bundle..."
     }
+  },
+  "tk-condition": {
+    "condition": {
+      "cartContainsBundle": {
+        "label": "Cart contains bundle"
+      }
+    }
   }
 }

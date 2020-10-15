@@ -29,5 +29,13 @@
       "bundleSelectLabel": "Zugewiesene Bundles",
       "bundleSelectPlaceholder": "Bundle hinzufügen..."
     }
+  },
+
+  "tk-condition": {
+    "condition": {
+      "cartContainsBundle": {
+        "label": "Warenkorb enthält Bundle"
+      }
+    }
   }
 }

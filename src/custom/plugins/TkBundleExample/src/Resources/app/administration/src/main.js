@@ -9,3 +9,6 @@ import './module/tk-bundle';
 //import for adding product bundle directly inside product
 import './extension/sw-product/view/sw-product-detail-base';
 import './extension/sw-product/page/sw-product-detail';
+
+//import for rule
+import './decorator/rule-condition-service-decoration';
