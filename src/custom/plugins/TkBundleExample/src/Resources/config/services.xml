@@ -30,5 +30,16 @@
         <service id="TkBundleExample\Core\Content\Product\ProductExtension">
             <tag name="shopware.entity.extension" />
         </service>
+
+        <service id="TkBundleExample\Core\Checkout\Bundle\Cart\BundleCartProcessor">
+            <argument type="service" id="tk_bundle.repository"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\Price\PercentagePriceCalculator"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\Price\AbsolutePriceCalculator"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\Price\QuantityPriceCalculator"/>
+
+            <!-- inject before product processor (5000) -->
+            <tag name="shopware.cart.processor" priority="6000" />
+            <tag name="shopware.cart.collector" priority="6000" />
+        </service>
     </services>
 </container>
