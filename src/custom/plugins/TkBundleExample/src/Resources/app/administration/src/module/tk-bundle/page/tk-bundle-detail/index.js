@@ -34,8 +34,8 @@ Component.register('tk-bundle-detail',{
     data() { //TODO creating variables in data vue js knows about those properties before even starts executing something
         return {
             bundle: null,
-            isLoading: null,
-            processSuccess: null,
+            isLoading: false,
+            processSuccess: false,
             repository: null
         };
     },
